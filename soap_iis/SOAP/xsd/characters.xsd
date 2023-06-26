@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://www.w3.org/2001/character" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.w3.org/2001/location" xmlns:ns1="http://www.w3.org/2001/episode">
+
+  <xs:import schemaLocation="enums.xsd"/>
+
+  <xs:import namespace="http://www.w3.org/2001/episode" schemaLocation="episode.xsd"/>
+
+  <xs:import namespace="http://www.w3.org/2001/location" schemaLocation="location.xsd"/>
+
+  <xs:element name="characters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="character"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="character">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="status" type="status" minOccurs="0"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+      <xs:element name="species" type="xs:string" minOccurs="0"/>
+      <xs:element name="gender" type="gender" minOccurs="0"/>
+      <xs:element name="origin" type="ns2:location" minOccurs="0"/>
+      <xs:element name="location" type="ns2:location" minOccurs="0"/>
+      <xs:element name="image" type="xs:string" minOccurs="0"/>
+      <xs:element name="episodes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="episode" type="ns1:episode" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:int" use="required"/>
+  </xs:complexType>
+
+  
+</xs:schema>

@@ -1,0 +1,51 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="character">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="name"/>
+        <xs:element type="xs:string" name="status"/>
+        <xs:element type="xs:string" name="type"/>
+        <xs:element type="xs:string" name="species"/>
+        <xs:element type="xs:string" name="gender"/>
+        <xs:element name="origin">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="name" minOccurs="0"/>
+              <xs:element type="xs:string" name="type" minOccurs="0"/>
+              <xs:element type="xs:string" name="dimension" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute type="xs:byte" name="id"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="location">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="name" minOccurs="0"/>
+              <xs:element type="xs:string" name="type" minOccurs="0"/>
+              <xs:element type="xs:string" name="dimension" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute type="xs:byte" name="id"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="image"/>
+        <xs:element name="episodes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="episode" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="name" minOccurs="0"/>
+                    <xs:element type="xs:date" name="showDate" minOccurs="0"/>
+                    <xs:element type="xs:byte" name="episodeNumber" minOccurs="0"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:byte" name="id"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="id"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

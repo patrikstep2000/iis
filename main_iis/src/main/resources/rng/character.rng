@@ -1,0 +1,98 @@
+<element name="character" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <optional>
+        <attribute name ="id">
+            <data type="integer"/>
+        </attribute>
+    </optional>
+    <element name="name">
+        <text/>
+    </element>
+    <element name="status">
+        <choice>
+            <value type="string">UNKNOWN</value>
+            <value type="string">ALIVE</value>
+            <value type="string">DEAD</value>
+        </choice>
+    </element>
+    <element name="type">
+        <text/>
+    </element>
+    <element name="species">
+        <text/>
+    </element>
+    <element name="gender">
+        <choice>
+            <value type="string">UNKNOWN</value>
+            <value type="string">FEMALE</value>
+            <value type="string">MALE</value>
+            <value type="string">GENDERLESS</value>
+        </choice>
+    </element>
+    <element name="origin">
+        <attribute name ="id">
+            <data type="integer"/>
+        </attribute>
+        <optional>
+            <element name="name">
+                <text/>
+            </element>
+        </optional>
+        <optional>
+            <element name="type">
+                <text/>
+            </element>
+        </optional>
+        <optional>
+            <element name="dimension">
+                <text/>
+            </element>
+        </optional>
+    </element>
+    <element name="location">
+        <attribute name ="id">
+            <data type="integer"/>
+        </attribute>
+        <optional>
+            <element name="name">
+                <text/>
+            </element>
+        </optional>
+        <optional>
+            <element name="type">
+                <text/>
+            </element>
+        </optional>
+        <optional>
+            <element name="dimension">
+                <text/>
+            </element>
+        </optional>
+    </element>
+    <element name="image">
+        <text/>
+    </element>
+    <element name="episodes">
+        <zeroOrMore>
+            <element name="episode">
+                <attribute name ="id">
+                    <data type="integer"/>
+                </attribute>
+                <optional>
+                    <element name="name">
+                        <text/>
+                    </element>
+                </optional>
+                <optional>
+                    <element name="showDate">
+                        <text/>
+                    </element>
+                </optional>
+                <optional>
+                    <element name="episodeNumber">
+                        <text/>
+                    </element>
+                </optional>
+            </element>
+        </zeroOrMore>
+    </element>
+</element>

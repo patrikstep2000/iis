@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.w3.org/2001/episode" xmlns:ns1="http://www.w3.org/2001/character">
+
+    <xs:import namespace="http://www.w3.org/2001/character" schemaLocation="character.xsd"/>
+
+    <xs:import namespace="http://www.w3.org/2001/episode" schemaLocation="episode.xsd"/>
+
+    <xs:element name="character" type="ns1:character"/>
+
+    <xs:element name="episode" type="ns2:episode"/>
+
+
+
+    <xs:complexType name="localDate" final="extension restriction">
+        <xs:sequence/>
+    </xs:complexType>
+
+    <xs:simpleType name="gender">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="UNKNOWN"/>
+            <xs:enumeration value="FEMALE"/>
+            <xs:enumeration value="MALE"/>
+            <xs:enumeration value="GENDERLESS"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="status">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="UNKNOWN"/>
+            <xs:enumeration value="ALIVE"/>
+            <xs:enumeration value="DEAD"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
